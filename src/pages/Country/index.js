@@ -10,7 +10,12 @@ function Country() {
       <Row gutter={[16, 16]}>
         <Col span={12}>
           <Card type="inner" title="Flag">
-            <img height={"20px"} width={"30px"} src={country?.flags?.png} />
+            <img
+              height={"20px"}
+              width={"30px"}
+              alt={country?.flags?.alt}
+              src={country?.flags?.png}
+            />
           </Card>
           <Card style={{ marginTop: 16 }} type="inner" title="Region">
             {country?.region}

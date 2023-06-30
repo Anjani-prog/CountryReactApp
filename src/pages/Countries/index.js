@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Pagination, List } from "antd";
 import { useNavigate } from "react-router-dom";
 import { CountryContext } from "../../context";
@@ -16,6 +16,7 @@ function Countries() {
 
   return (
     <div className="container">
+      <div className="title">Countries</div>
       <List
         size="small"
         bordered
@@ -23,7 +24,12 @@ function Countries() {
         renderItem={(item, index) => (
           <List.Item>
             <div className="row" key={index}>
-              <img height={"20px"} width={"30px"} src={item?.flags?.png} />
+              <img
+                height={"20px"}
+                width={"30px"}
+                alt={item?.flags?.alt}
+                src={item?.flags?.png}
+              />
               <button
                 onClick={() => {
                   setcountry(item);
@@ -49,5 +55,4 @@ function Countries() {
     </div>
   );
 }
-
 export default Countries;
